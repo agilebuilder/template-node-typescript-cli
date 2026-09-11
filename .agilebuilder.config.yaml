@@ -1,0 +1,65 @@
+version: "1.0"
+name: node-ts-cli
+description: Node.js 20+ TypeScript CLI 工具模板（commander + tsc + Vitest + ESLint）
+variables:
+  enabled: true
+  delimiter: "%"
+  filePatterns:
+    mode: include
+    patterns:
+      - package.json
+      - README.md
+      - AGENTS.md
+      - src/cli.ts
+  inquirerQuestions:
+    - name: projectName
+      type: input
+      message: 项目名称（package.json 的 name）
+      default: demo-cli
+      required: true
+    - name: cliName
+      type: input
+      message: 命令名（package.json 的 bin 名，用户安装的命令）
+      default: demo-cli
+    - name: description
+      type: input
+      message: 项目描述
+      default: 一个命令行工具
+    - name: author
+      type: input
+      message: 作者（可留空）
+      default: ""
+    - name: nodeVersion
+      type: list
+      message: 目标 Node.js 大版本（写入 engines）
+      choices:
+        - "20"
+        - "22"
+      default: "20"
+hooks:
+  after_write:
+    scriptType: shell
+    script: git init && git add -A && git commit -m "chore: init project from template"
+    errorHandling: warn
+market:
+  slug: node-ts-cli
+  name: Node.js TypeScript CLI 模板
+  summary: 基于 Node.js 20+ 与 TypeScript 的命令行工具脚手架，内置 Commander、Vitest 与 ESLint。
+  description: |
+    ## Node.js TypeScript CLI 模板
+
+    用于快速创建可发布到 npm 的命令行工具项目：
+
+    - **Commander** 组织子命令、选项与帮助输出
+    - **TypeScript + tsc** 编译到 `dist/`，`bin` 入口带 shebang
+    - **Vitest** 单元测试，示例覆盖工具函数
+    - **ESLint**（flat config）保证代码风格一致
+
+    生成后即可 `npm run build`、`npm test`，并通过 `node dist/cli.js --help` 验证。
+  category: CLI 工具
+  tags:
+    - Node.js
+    - TypeScript
+    - Commander
+    - CLI
+  version: 1.0.0

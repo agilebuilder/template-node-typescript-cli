@@ -1,0 +1,12 @@
+node_modules/
+dist/
+coverage/
+*.log
+.DS_Store
+.env
+.env.local
+
+# 不提交任何包管理器锁文件
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
