@@ -22,7 +22,7 @@
 │       └── greet.ts      # 示例工具函数
 ├── tests/
 │   └── greet.test.ts     # Vitest 示例测试
-├── eslint.config.js      # ESLint flat config
+├── eslint.config.mjs     # ESLint flat config
 ├── tsconfig.json         # tsc 构建配置
 └── vitest.config.ts      # Vitest 配置
 ```
