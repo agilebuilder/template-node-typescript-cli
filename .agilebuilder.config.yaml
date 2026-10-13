@@ -1,6 +1,6 @@
 version: "1.0"
 name: node-ts-cli
-description: Node.js 20+ TypeScript CLI 工具模板（commander + tsc + Vitest + ESLint）
+description: Node.js 24 LTS TypeScript CLI 工具模板（commander + tsc + Vitest + ESLint）
 variables:
   enabled: true
   delimiter: "%"
@@ -33,9 +33,9 @@ variables:
       type: list
       message: 目标 Node.js 大版本（写入 engines）
       choices:
-        - "20"
         - "22"
-      default: "20"
+        - "24"
+      default: "24"
 hooks:
   after_write:
     scriptType: shell
@@ -44,7 +44,7 @@ hooks:
 market:
   slug: node-ts-cli
   name: Node.js TypeScript CLI 模板
-  summary: 基于 Node.js 20+ 与 TypeScript 的命令行工具脚手架，内置 Commander、Vitest 与 ESLint。
+  summary: 默认使用 Node.js 24 LTS 与 TypeScript 的命令行工具脚手架，内置 Commander、Vitest 与 ESLint，可选择 Node.js 22。
   description: |
     ## Node.js TypeScript CLI 模板
 
@@ -63,3 +63,17 @@ market:
     - Commander
     - CLI
   version: 1.0.0
+  gitUrl: https://github.com/agilebuilder/template-node-typescript-cli.git
+  defaultBranch: main
+  englishMetadata:
+    name: Node.js TypeScript CLI
+    summary: TypeScript command-line starter with Commander, Vitest and ESLint.
+    description: Build an npm-distributed CLI with Commander commands, TypeScript
+      compilation, a shebang entry point, Vitest examples and ESLint flat
+      configuration. Generated projects support build, test and type checking.
+    category: CLI tools
+    tags:
+      - Node.js
+      - TypeScript
+      - Commander
+      - CLI
