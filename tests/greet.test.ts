@@ -2,15 +2,15 @@ import { describe, expect, it } from "vitest";
 import { greet } from "../src/lib/greet";
 
 describe("greet", () => {
-  it("用给定的名字生成问候语", () => {
+  it("greets with the given name", () => {
     expect(greet("AgileBuilder")).toBe("Hello, AgileBuilder!");
   });
 
-  it("名字为空白时回退到 world", () => {
+  it("falls back to world when the name is blank", () => {
     expect(greet("   ")).toBe("Hello, world!");
   });
 
-  it("忽略名字两端的空白", () => {
+  it("trims whitespace around the name", () => {
     expect(greet("  cli  ")).toBe("Hello, cli!");
   });
 });

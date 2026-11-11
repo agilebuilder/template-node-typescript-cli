@@ -1,6 +1,6 @@
 version: "1.0"
 name: node-ts-cli
-description: Node.js 24 LTS TypeScript CLI 工具模板（commander + tsc + Vitest + ESLint）
+description: Node.js 24 LTS TypeScript CLI tool template (commander + tsc + Vitest + ESLint)
 variables:
   enabled: true
   delimiter: "%"
@@ -9,29 +9,30 @@ variables:
     patterns:
       - package.json
       - README.md
+      - README.zh-CN.md
       - AGENTS.md
       - src/cli.ts
   inquirerQuestions:
     - name: projectName
       type: input
-      message: 项目名称（package.json 的 name）
+      message: Project name (package.json name)
       default: demo-cli
       required: true
     - name: cliName
       type: input
-      message: 命令名（package.json 的 bin 名，用户安装的命令）
+      message: Command name (package.json bin name, the command users install)
       default: demo-cli
     - name: description
       type: input
-      message: 项目描述
-      default: 一个命令行工具
+      message: Project description
+      default: A command-line tool
     - name: author
       type: input
-      message: 作者（可留空）
+      message: Author (optional)
       default: ""
     - name: nodeVersion
       type: list
-      message: 目标 Node.js 大版本（写入 engines）
+      message: Target Node.js major version (written to engines)
       choices:
         - "22"
         - "24"

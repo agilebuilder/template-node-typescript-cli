@@ -6,7 +6,7 @@ coverage/
 .env
 .env.local
 
-# 不提交任何包管理器锁文件
+# Never commit any package manager lock files
 package-lock.json
 pnpm-lock.yaml
 yarn.lock
